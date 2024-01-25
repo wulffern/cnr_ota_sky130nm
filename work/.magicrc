@@ -1,0 +1,2 @@
+source ../tech/magic/.magicrc
+addpath ../design/CNR_OTA_SKY130NM
