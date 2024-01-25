@@ -1,0 +1,6 @@
+corner:
+  Lay: ''
+  Sch: ''
+ngspice:
+  library: CNR_OTA_SKY130NM
+  cell: CNR_OTA

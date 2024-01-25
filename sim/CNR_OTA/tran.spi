@@ -1,0 +1,99 @@
+*TB_SUN_TR_SKY130NM/TB_NCM
+*----------------------------------------------------------------
+* Include
+*----------------------------------------------------------------
+#ifdef Lay
+.include ../../../work/lpe/CNR_OTA_lpe.spi
+#else
+.include ../../../work/xsch/CNR_OTA.spice
+#endif
+
+*-----------------------------------------------------------------
+* OPTIONS
+*-----------------------------------------------------------------
+.option TNOM=27 GMIN=1e-15 reltol=1e-5
+
+*-----------------------------------------------------------------
+* PARAMETERS
+*-----------------------------------------------------------------
+.param TRF = 10p
+
+.param AVDD = {vdda}
+
+
+.param fin = 10e3
+
+.param vamp = 0.01
+
+*-----------------------------------------------------------------
+* FORCE
+*-----------------------------------------------------------------
+VSS  VSS  0     dc 0
+VDD  VDD_1V8  VSS  dc {AVDD}
+
+*VSIP VSIP 0 dc {AVDD/2 + 10m}
+*VSIN VSIN 0 dc {AVDD/2 - 10m}
+
+VCM VCM 0 dc {AVDD/2}
+VSARP VSIP VCM sin (0 {vamp} {fin} )
+VSARN VSIN VCM sin (0 {-vamp} {fin} )
+
+
+
+*-----------------------------------------------------------------
+* DUT
+*-----------------------------------------------------------------
+.include ../xdut.spi
+
+.include ../load.spi
+
+vlp lpci lpco dc 0
+
+.include ../../../../cpdk/ngspice/balun.spi
+xb1 VD VCM VOP VON balun
+xb2 VD VCM LOP LON balun
+
+*----------------------------------------------------------------
+* MEASURES
+*----------------------------------------------------------------
+
+
+*----------------------------------------------------------------
+* PROBE
+*----------------------------------------------------------------
+
+.save v(xdut.vbn1) v(xdut.vbn2) v(xdut.vbn) v(xdut.vcn)
+.save v(xdut.vbp1) v(xdut.vbp2) v(xdut.vbp) v(xdut.vcp)
+.save v(xdut.vconp) v(xdut.vconn) v(xdut.vcopn) v(xdut.vcopp)
+.save v(xdut.vs)
+.save v(vsin) v(vsip)
+.save v(xdut.vcbp)
+.save v(vi)
+.save v(xdut.vco) v(xdut.vcref)
+.save v(xdut.vcs)
+.save v(vd) v(vcm)
+.save v(von) v(vop) v(vin) v(vip) v(ibpsr_5u) v(vdd_1v8) v(vss) v(vsin) v(vsip)
+*----------------------------------------------------------------
+* NGSPICE control
+*----------------------------------------------------------------
+.control
+set num_threads=8
+set color0=white
+set color1=black
+unset askquit
+
+optran 0 0 0 100p 2n 0
+
+
+tran 100n 101u 1u
+
+
+let vi = v(vsip) - v(vsin)
+
+write
+quit
+
+
+.endc
+
+.end

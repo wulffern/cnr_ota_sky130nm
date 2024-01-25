@@ -1,0 +1,105 @@
+*TB_SUN_TR_SKY130NM/TB_NCM
+*----------------------------------------------------------------
+* Include
+*----------------------------------------------------------------
+#ifdef Lay
+.include ../../../work/lpe/CNR_OTA_lpe.spi
+#else
+.include ../../../work/xsch/CNR_OTA.spice
+#endif
+
+*-----------------------------------------------------------------
+* OPTIONS
+*-----------------------------------------------------------------
+.option TNOM=27 GMIN=1e-15 reltol=1e-5
+
+*-----------------------------------------------------------------
+* PARAMETERS
+*-----------------------------------------------------------------
+.param TRF = 10p
+
+.param AVDD = {vdda}
+
+*-----------------------------------------------------------------
+* FORCE
+*-----------------------------------------------------------------
+VSS  VSS  0     dc 0
+VDD  VDD_1V8  0  dc {AVDD}
+
+VCM VCM 0 dc {AVDD/2}
+VSARP VSIP VCM dc 0
+VSARN VSIN VCM dc 0
+
+*-----------------------------------------------------------------
+* DUT
+*-----------------------------------------------------------------
+.include ../xdut.spi
+
+
+.include ../load.spi
+
+*vlp1 LOP VOP dc 0
+*vlp2 LON VON dc 0
+.include ../../../../cpdk/ngspice/balun.spi
+xb1 VD VCM VOP VON balun
+xb2 VD VCM LOP LON balun
+
+L1 LPCI LPCO 1
+C1 LPCO 0 1
+
+vdc LPCI 0 ac 1
+
+*.include ../../../../cpdk/ngspice/tian_subckt.lib
+*X999 LPCI LPCO loopgainprobe
+
+
+*----------------------------------------------------------------
+* MEASURES
+*----------------------------------------------------------------
+
+
+*----------------------------------------------------------------
+* PROBE
+*----------------------------------------------------------------
+
+.save v(xdut.vbn1) v(xdut.vbn2) v(xdut.vbn) v(xdut.vcn)
+.save v(xdut.vbp1) v(xdut.vbp2) v(xdut.vbp) v(xdut.vcp)
+.save v(xdut.vconp) v(xdut.vconn) v(xdut.vcopn) v(xdut.vcopp)
+.save v(xdut.vcbn1) v(xdut.vcbn2)
+.save v(xdut.vcr)
+.save v(xdut.vs)
+.save v(xdut.vcbp)
+.save v(vcm) v(vd)
+.save v(xdut.vco) v(xdut.vcref)
+.save v(xdut.vsc)
+.save v(von) v(vop) v(vin) v(vip) v(ibpsr_5u) v(vdd_1v8) v(vss) v(vsin) v(vsip)
+.save v(lpci) v(lpco)
+.save V(X999.x) I(v.X999.Vi)
+.save v(LPO) v(LPI) v(LOP) V(LON)
+.save v(AVDD)
+*----------------------------------------------------------------
+* NGSPICE control
+*----------------------------------------------------------------
+.control
+set num_threads=8
+set color0=white
+set color1=black
+unset askquit
+
+optran 0 0 0 100n 4u 0
+op
+write {cicname}_op.raw
+
+*----------------------------------------------------------------
+* LSTB analysis
+*----------------------------------------------------------------
+* Set voltage AC to 1
+ac dec 50 100 10G
+
+write
+
+quit
+
+.endc
+
+.end
