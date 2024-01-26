@@ -1,2 +1,3 @@
 source ../tech/xschem/xschemrc
+lappend tcl_files ${XSCHEM_SHAREDIR}/ngspice_backannotate.tcl
 append XSCHEM_LIBRARY_PATH :../design

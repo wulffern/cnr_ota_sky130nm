@@ -76,7 +76,7 @@ unset askquit
 
 optran 0 0 0 100n 4u 0
 op
-
+write {cicname}_op.raw
 
 *----------------------------------------------------------------
 * LSTB analysis

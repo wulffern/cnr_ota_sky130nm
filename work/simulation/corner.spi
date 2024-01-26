@@ -1,0 +1,29 @@
+
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__ss.pm3.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__ss.corner.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/corners/ss/nonfet.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/all.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/r+c/res_typical__cap_typical.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/corners/ss/specialized_cells.spice"
+
+.lib "../../tech/ngspice/temperature.spi" Tl
+
+.lib "../../tech/ngspice/supply.spi" Vl
+
+
+
+.option savecurrents
+.save all
+.control
+optran 0 0 0 1n 2u 0
+op
+write TB_CNR_OTA.raw
+
+.endc
+.end

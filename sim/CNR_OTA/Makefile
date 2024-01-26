@@ -12,6 +12,10 @@ LIB =CNR_OTA_SKY130NM
 OPT=
 
 
+all:
+	make typical etc mc TB=lstb
+	make typical etc mc TB=lstbcmfb
+
 
 test:
 	${MAKE} typical OPT="Debug"
