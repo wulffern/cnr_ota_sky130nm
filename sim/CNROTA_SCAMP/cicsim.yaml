@@ -1,0 +1,6 @@
+corner:
+  Lay: ''
+  Sch: ''
+ngspice:
+  library: CNR_OTAEX_SKY130NM
+  cell: CNROTA_SCAMP

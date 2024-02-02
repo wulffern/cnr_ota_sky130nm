@@ -1,0 +1,26 @@
+* Measure CNROTA_SCAMP
+.control
+
+load {cicname}.raw
+
+
+
+
+
+echo "MEAS_START"
+
+
+foreach vtemp -40 -20 0 20 40 80 125
+load {cicname}_$vtemp
+
+let gain = vo/v(xdut.vi)
+
+meas tran A_$vtemp find gain at=15u
+meas tran VO_$vtemp find vo at=15u
+
+end
+
+
+
+echo "MEAS_END"
+.endc

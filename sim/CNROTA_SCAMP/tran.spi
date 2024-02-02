@@ -1,0 +1,94 @@
+*TB_SUN_TR_SKY130NM/TB_NCM
+*----------------------------------------------------------------
+* Include
+*----------------------------------------------------------------
+#ifdef Lay
+.include ../../../work/lpe/CNROTA_SCAMP_lpe.spi
+#else
+.include ../../../work/xsch/CNROTA_SCAMP.spice
+#endif
+
+*-----------------------------------------------------------------
+* OPTIONS
+*-----------------------------------------------------------------
+.option TNOM=27 GMIN=1e-15 reltol=1e-3
+
+*-----------------------------------------------------------------
+* PARAMETERS
+*-----------------------------------------------------------------
+.param TRF = 10p
+
+.param AVDD = {vdda}
+
+
+*- 1 MHz clock frequency
+.param PERIOD_CLK = 20u
+
+*- 40% duty-cycle clock
+.param PW_CLK = PERIOD_CLK/2
+
+*- Sampling frequency
+.param fs = 1/PERIOD_CLK
+
+
+*-----------------------------------------------------------------
+* FORCE
+*-----------------------------------------------------------------
+VSS  VSS  0     dc 0
+VDD  VDD_1V8  VSS  dc {AVDD}
+
+VCP1 P1_1V8 0 dc 0 pulse (0 {AVDD} 2n {TRF} {TRF} {PW_CLK-4n} {PERIOD_CLK})
+VCP2 P2_1V8 0 dc 0 pulse ({AVDD} 0 0 {TRF} {TRF} {PW_CLK+4n} {PERIOD_CLK})
+
+*-----------------------------------------------------------------
+* DUT
+*-----------------------------------------------------------------
+.include ../xdut.spi
+
+*----------------------------------------------------------------
+* MEASURES
+*----------------------------------------------------------------
+
+
+*----------------------------------------------------------------
+* PROBE
+*----------------------------------------------------------------
+
+.save V(VOP) v(VON) v(P1_1V8) V(P2_1V8)
+
+.save v(xdut.P1) v(xdut.P1_N) v(xdut.P2) v(xdut.P2_N)
+.save v(xdut.VGNDN) v(xdut.VGNDP)
+.save v(xdut.IBP_OTA)
+.save v(xdut.VIP_CT)
+.save v(xdut.VIN_CT)
+.save v(xdut.IBP_1U<1>)
+.save v(xdut.VI)
+.save v(xdut.net2)
+
+*----------------------------------------------------------------
+* NGSPICE control
+*----------------------------------------------------------------
+.control
+set num_threads=8
+set color0=white
+set color1=black
+unset askquit
+
+optran 0 0 0 100n 20u 0
+
+
+
+foreach vtemp -40 -20 0 20 40 80 125
+  option temp=$vtemp
+  tran 100n 20u
+
+  let vo = v(vop) - v(von)
+  write {cicname}_$vtemp
+end
+
+
+quit
+
+.endc
+
+.end

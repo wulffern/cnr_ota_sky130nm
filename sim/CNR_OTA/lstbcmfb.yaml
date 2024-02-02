@@ -3,7 +3,7 @@ bandwidth:
   name: Bandwidth
   typ: 10
   min: 1
-  max: 40
+  max: 60
   scale: 1e-3
   digits: 3
   unit: kHz
@@ -31,7 +31,7 @@ phaseMargin:
   name: Phase Margin
   typ: 60
   min: 45
-  max: 100
+  max: 105
   scale: 1
   unit: ""
 

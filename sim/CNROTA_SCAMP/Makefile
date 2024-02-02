@@ -1,17 +1,16 @@
 
-all:
-	make typical etc mc summary TB=lstb
-	make typical etc mc summary TB=lstbcmfb
 
+all: typical etc mc summary
 
 include ../../tech/make/sim.make
 
 TB=tran
 VIEW=Sch
 #VIEW=Lay
-CELL=CNR_OTA
-LIB =CNR_OTA_SKY130NM
+CELL=CNROTA_SCAMP
+LIB =CNR_OTAEX_SKY130NM
 OPT=
+
 
 
 test:
@@ -33,7 +32,7 @@ etc: netlist
 	cicsim run --name ${VIEW}_etc ${TB} ${OPT} ${VIEW} Gt "Kss,Kff,Ksf,Kfs" "Th,Tl" "Vl,Vh"
 
 mc: netlist
-	cicsim run --name ${VIEW}_mc --count 10 ${TB} ${OPT} ${VIEW} Gt "Kttmm" "Tt" "Vt"
+	cicsim run --name ${VIEW}_mc --count 30 ${TB} ${OPT} ${VIEW} Gt "Kttmm" "Tt" "Vt"
 
 ntc: netlist
 	cicsim run --name ${VIEW}_ntc ${TB} ${OPT} ${VIEW} Gt "Ktt,Kss,Kff" "Tt" Vt
