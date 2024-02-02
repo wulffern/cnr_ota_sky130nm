@@ -1,6 +1,9 @@
 corner:
   Lay: ''
   Sch: ''
+options:
+  useTmpDir: True
+  sha: True
 ngspice:
   library: CNR_OTAEX_SKY130NM
   cell: CNROTA_SCAMP
