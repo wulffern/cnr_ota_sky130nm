@@ -7,8 +7,8 @@ include ../../tech/make/sim.make
 TB=tran
 VIEW=Sch
 #VIEW=Lay
-CELL=CNROTA_SCAMP
-LIB =CNR_OTAEX_SKY130NM
+CELL=TB_CNROTA_SCAMP
+LIB =TB_CNR_OTA
 OPT=
 
 

@@ -5,16 +5,30 @@
 Carsten Wulff
 
 # Why
+In most books I find that CMFBs and fully differential OTAs are missing. 
+When I make switched-cap examples, like TB_CNROTA_SCAMP, I need a fully differential OTA. 
+
+![](documents/TB_CNR_OTA/TB_CNROTA_SCAMP.svg)
+
+# How
  My go-to fully differential current mirror OTA with a level-shifter
  based CMFB and a OTA to control the common mode.
+ 
+ 
+ ![](documents/CNR_OTA_SKY130NM/CNR_OTA.svg)
+ 
+ 
+ 
 
 # What
 
 | What                    | Lib/Folder       | Cell/Name       |
-|:------------------------|:----------------:|:---------------:|
+|:------------------------|:----------------|:---------------|
 | Schematic               | CNR_OTA_SKY130NM | CNR_OTA         |
 | Example usage Schematic | TB_CNR_OTA       | TB_CNROTA_SCAMP |
 | Back annotation TB      | TB_CNR_OTA       | TB_CNROTA_OP    |
+
+Details in  [documents/schematic.md](documents/schematic.md)
 
 
 # Changelog/Plan
@@ -24,17 +38,28 @@ Carsten Wulff
 
 
 # Signal interface
-| Signal  | Direction | Domain  | Description             |
-|:--------|:---------:|:-------:|:------------------------|
-| VDD_1V8 | Input     | VDD_1V8 | Main supply             |
-| VIN     | Input     | VDD_1V8 | Negative input          |
-| VIP     | Input     | VDD_1V8 | Positive input          |
-| VOP     | Input     | VDD_1V8 | Positive output         |
-| VON     | Input     | VDD_1V8 | Negative output         |
-| LPCO    | Output    | VDD_1V8 | Common mode loop output |
+| Signal  | Direction | Domain  | Description                           |
+|:--------|:---------:|:-------:|:--------------------------------------|
+| VDD_1V8 | Input     | VDD_1V8 | Main supply                           |
+| VIN     | Input     | VDD_1V8 | Negative input                        |
+| VIP     | Input     | VDD_1V8 | Positive input                        |
+| VOP     | Input     | VDD_1V8 | Positive output                       |
+| VON     | Input     | VDD_1V8 | Negative output                       |
+| LPCO    | Output    | VDD_1V8 | Common mode loop output               |
 | LPCI    | Input     | VDD_1V8 | Common mode loop input. Short to LCPO |
-| VSS     | Input     | Ground  |                         |
+| IBPSR   | Input     | VDD_1V8 | Bias current (2 uA )                  |
+| VSS     | Input     | Ground  |                                       |
 
+
+
+# Dependencies
+| Library                                                                | Description                                  |
+|:-----------------------------------------------------------------------|:---------------------------------------------|
+| [CNR\_ATR\_SKY130NM](https://github.com/wulffern/cnr_atr_sky130nm)     | Quantized analog transistors                 |
+| [SUN\_TR\_SKY130NM](https://github.com/wulffern/sun_tr_sky130nm)       | Standard digital cells and Resistors         |
+| [RPLY\_BIAS\_SKY130NM](https://github.com/wulffern/rply_bias_sky130nm) | PTAT current source, used in TB_CNROTA_SCAMP |
+| [tech_sky130B](https://github.com/wulffern/tech_sky130B)               | Technology setup                             |
+| [cpdk](https://github.com/wulffern/cpdk)                               | Borders. Loop stability setup                |
 
 
 # Key parameters

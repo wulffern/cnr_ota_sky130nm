@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -623,12 +623,12 @@ C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 720 -850 0 0 {name=x29}
 C {CNR_ATR_SKY130NM/CNRATR_NCH_2C8F0.sym} 840 -850 0 0 {name=x30 }
 C {devices/lab_wire.sym} 850 -910 0 0 {name=p25 sig_type=std_logic lab=VCN}
 C {devices/lab_wire.sym} 750 -1050 0 0 {name=p26 sig_type=std_logic lab=VCP}
-C {CNR_ATR_SKY130NM/CNRATR_NCH_12C1F2.sym} 560 -460 0 0 {name=x31 }
-C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 560 -220 0 0 {name=x32[3:0]}
-C {CNR_ATR_SKY130NM/CNRATR_NCH_12C1F2.sym} 800 -460 0 0 {name=x33 }
-C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 800 -220 0 0 {name=x34[3:0]}
-C {CNR_ATR_SKY130NM/CNRATR_NCH_12C1F2.sym} 1160 -460 0 1 {name=x35 }
-C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1160 -220 0 1 {name=x36[3:0]}
+C {CNR_ATR_SKY130NM/CNRATR_NCH_12C2F0.sym} 560 -460 0 0 {name=x31 }
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 560 -220 0 0 {name=x36[3:0]}
+C {CNR_ATR_SKY130NM/CNRATR_NCH_12C2F0.sym} 800 -460 0 0 {name=x33 }
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 800 -220 0 0 {name=x1[3:0]}
+C {CNR_ATR_SKY130NM/CNRATR_NCH_12C2F0.sym} 1160 -460 0 1 {name=x35 }
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1160 -220 0 1 {name=x4[3:0]}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 930 -420 1 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1030 -420 1 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=1 spiceprefix=X}
 C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 890 -280 0 0 {name=x37 }

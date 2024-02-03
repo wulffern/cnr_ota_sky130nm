@@ -13,8 +13,12 @@
 PREFIX=
 LIB=CNR_OTA_SKY130NM
 CELL=CNR_OTA
+SVGLIBS = CNR_OTA_SKY130NM TB_CNR_OTA
 
 #- Provide cells you want to check for the lvsall drcall commands
 CELLS = CNR_OTA
 
+
 include ../tech/make/core.make
+
+

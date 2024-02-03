@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/CNROTA_SCAMP_lpe.spi
+.include ../../../work/lpe/TB_CNROTA_SCAMP_lpe.spi
 #else
-.include ../../../work/xsch/CNROTA_SCAMP.spice
+.include ../../../work/xsch/TB_CNROTA_SCAMP.spice
 #endif
 
 *-----------------------------------------------------------------
