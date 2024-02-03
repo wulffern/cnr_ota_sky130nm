@@ -1,0 +1,10 @@
+
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__tt.pm3.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__mismatch.corner.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__tt.corner.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__mismatch.corner.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/corners/tt/nonfet.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/all.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/r+c/res_typical__cap_typical.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice"
+.include "/opt/pdk/share/pdk/sky130B/libs.tech/ngspice/corners/tt/specialized_cells.spice"

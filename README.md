@@ -10,11 +10,11 @@ Carsten Wulff
 
 # What
 
-| What            | Lib/Folder       | Cell/Name |
-| :-              | :-:              | :-:       |
-| Schematic       | CNR_OTA_SKY130NM | CNR_OTA |
-| Layout          | CNR_OTA_SKY130NM | CNR_OTA |
-| LPE             | CNR_OTA_SKY130NM | CNR_OTA |
+| What                    | Lib/Folder       | Cell/Name       |
+|:------------------------|:----------------:|:---------------:|
+| Schematic               | CNR_OTA_SKY130NM | CNR_OTA         |
+| Example usage Schematic | TB_CNR_OTA       | TB_CNROTA_SCAMP |
+| Back annotation TB      | TB_CNR_OTA       | TB_CNROTA_OP    |
 
 
 # Changelog/Plan
