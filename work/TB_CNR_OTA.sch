@@ -1,4 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -88,7 +88,7 @@ lab=VIP}
 C {CNR_OTA_SKY130NM/CNR_OTA.sym} 270 -230 0 0 {name=x1}
 C {devices/vsource.sym} -60 -100 0 0 {name=V1 value=\{vdda\}}
 C {devices/gnd.sym} -60 30 0 0 {name=l1 lab=GND}
-C {devices/isource.sym} 90 -70 2 0 {name=I0 value=1u}
+C {devices/isource.sym} 90 -70 2 0 {name=I0 value=2u}
 C {devices/lab_wire.sym} 10 -130 0 0 {name=p1 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_wire.sym} 100 -110 0 0 {name=p2 sig_type=std_logic lab=IBPSR}
 C {devices/lab_wire.sym} 140 -170 0 0 {name=p3 sig_type=std_logic lab=LPC}

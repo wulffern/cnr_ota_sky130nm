@@ -122,7 +122,7 @@ lab=VOP}
 N 1530 -1190 1720 -1190 {
 lab=VOP}
 N 780 -870 820 -870 {
-lab=IBP_1U[0]}
+lab=VI}
 N 780 -610 820 -610 {
 lab=VSS}
 N 1640 -870 1640 -850 {
@@ -190,9 +190,9 @@ lab=VIN_CT}
 N 990 -870 990 -750 {
 lab=VIP_CT}
 N 740 -870 780 -870 {
-lab=IBP_1U[0]}
+lab=VI}
 N 740 -970 740 -870 {
-lab=IBP_1U[0]}
+lab=VI}
 N 1720 -750 1800 -750 {
 lab=VON}
 N 1720 -790 1800 -790 {
@@ -230,7 +230,7 @@ lab=VSS}
 N 740 -620 740 -610 {
 lab=VSS}
 N 740 -870 740 -820 {
-lab=IBP_1U[0]}
+lab=VI}
 N 680 -680 720 -680 {
 lab=VSS}
 N 740 -740 740 -720 {
@@ -242,9 +242,9 @@ lab=VSS}
 N 620 -990 650 -990 {
 lab=IBP_1U[0]}
 N 710 -990 740 -990 {
-lab=IBP_1U[0]}
+lab=VI}
 N 740 -990 740 -970 {
-lab=IBP_1U[0]}
+lab=VI}
 C {RPLY_BIAS_SKY130NM/RPLY_BIAS.sym} 410 -850 0 0 {name=x1}
 C {devices/ipin.sym} 160 -1230 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 130 -20 0 0 {name=p2 lab=VSS}
