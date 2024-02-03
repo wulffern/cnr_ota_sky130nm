@@ -6,7 +6,7 @@ all:
 
 include ../../tech/make/sim.make
 
-TB=tran
+TB=lstb
 VIEW=Sch
 #VIEW=Lay
 CELL=CNR_OTA

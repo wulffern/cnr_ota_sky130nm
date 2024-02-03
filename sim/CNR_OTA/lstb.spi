@@ -65,6 +65,8 @@ X999 LPI LPO loopgainprobe
 .save V(X999.x) I(v.X999.Vi)
 .save v(LPO) v(LPI) v(LOP) V(LON)
 .save v(AVDD)
+.save i(VSS)
+.save i(VDD)
 *----------------------------------------------------------------
 * NGSPICE control
 *----------------------------------------------------------------
