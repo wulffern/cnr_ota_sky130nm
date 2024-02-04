@@ -3,7 +3,7 @@ Example of a switched capacitor amplifier.
 
 
 RPLY\_BIAS\_SKY130NM is a PTAT current source bias. One of the 1 uA currents
-is fed into a feq resistors. 
+is fed into a few resistors. 
 
 
 The gain of the switched capacitor amplifier is set by the relationship

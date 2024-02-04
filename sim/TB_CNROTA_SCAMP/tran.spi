@@ -65,6 +65,12 @@ VCP2 P2_1V8 0 dc 0 pulse ({AVDD} 0 0 {TRF} {TRF} {PW_CLK+4n} {PERIOD_CLK})
 .save v(xdut.VI)
 .save v(xdut.net2)
 
+
+#ifdef Debug
+.save all
+.option savecurrents
+#endif
+
 *----------------------------------------------------------------
 * NGSPICE control
 *----------------------------------------------------------------
@@ -82,8 +88,9 @@ foreach vtemp -40 -20 0 20 40 80 125
   option temp=$vtemp
   tran 100n 20u
 
+  set fend = .raw
   let vo = v(vop) - v(von)
-  write {cicname}_$vtemp
+  write {cicname}_$vtemp$fend
 end
 
 

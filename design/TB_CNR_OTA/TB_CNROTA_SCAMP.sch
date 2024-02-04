@@ -236,11 +236,11 @@ lab=VI}
 N 620 -670 620 -650 {
 lab=VI}
 N 480 -500 500 -500 {
-lab=#net4}
+lab=VDD_1V8}
 N 500 -500 500 -480 {
-lab=#net4}
+lab=VDD_1V8}
 N 480 -480 500 -480 {
-lab=#net4}
+lab=VDD_1V8}
 N 1400 10 1600 -140 {
 lab=VON}
 N 1600 -430 1600 -140 {
@@ -332,3 +332,4 @@ model=res_generic_m3
 mult=1}
 C {devices/lab_wire.sym} 500 -670 0 0 {name=p7 sig_type=std_logic lab=IBP_1U[0]}
 C {devices/lab_wire.sym} 620 -670 0 1 {name=p58 sig_type=std_logic lab=VI}
+C {devices/lab_wire.sym} 500 -480 0 1 {name=p59 sig_type=std_logic lab=VLP}

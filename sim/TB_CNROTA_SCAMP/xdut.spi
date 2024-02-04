@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut TB_CNROTA_SCAMP
-XDUT  VDD_1V8 VSS VOP VON P1_1V8 P2_1V8  TB_CNROTA_SCAMP
+XDUT  P1_1V8 P2_1V8 VDD_1V8 VOP VON VSS  TB_CNROTA_SCAMP
