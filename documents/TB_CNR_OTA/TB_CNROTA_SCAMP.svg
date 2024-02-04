@@ -215,6 +215,7 @@ text {font-family: Sans-Serif;}
 <text fill="#0044ee"  xml:space="preserve" font-size="7.91791" transform="translate(619.84, 438.707)" >VGNDN</text>
 <text fill="#0044ee"  xml:space="preserve" font-size="7.91791" transform="translate(205.404, 224.404)" >IBP_1U[0]</text>
 <text fill="#0044ee"  xml:space="preserve" font-size="7.91791" transform="translate(337.863, 224.404)" >VI</text>
+<text fill="#0044ee"  xml:space="preserve" font-size="7.91791" transform="translate(270.189, 331.556)" >VLP</text>
 <text fill="#222222"  xml:space="preserve" font-size="8.79767" transform="translate(139.916, 327.478)" >RPLY_BIAS</text>
 <text fill="#222222"  xml:space="preserve" font-size="5.86512" transform="translate(102.413, 304.513)" >x1</text>
 <text fill="#222222"  xml:space="preserve" font-size="5.86512" transform="translate(102.413, 314.664)" >VDD_1V8</text>
@@ -330,7 +331,7 @@ text {font-family: Sans-Serif;}
 <text fill="#222222"  xml:space="preserve" font-size="7.3314" transform="translate(827.093, 624.394)" >Modified</text>
 <text fill="#222222"  xml:space="preserve" font-size="7.3314" transform="translate(829.913, 635.673)" >Copyright</text>
 <text fill="#222222"  xml:space="preserve" font-size="7.3314" transform="translate(872.209, 613.115)" >wulff</text>
-<text fill="#222222"  xml:space="preserve" font-size="7.3314" transform="translate(872.209, 624.394)" >2024-02-03  15:31:33</text>
+<text fill="#222222"  xml:space="preserve" font-size="7.3314" transform="translate(872.209, 624.394)" >2024-02-04  11:30:15</text>
 <text fill="#222222"  xml:space="preserve" font-size="7.3314" transform="translate(93.9535, 646.952)" >TB_CNROTA_SCAMP</text>
 <text fill="#222222"  xml:space="preserve" font-size="4.39884" transform="translate(206.18, 98.8672)" >Y</text>
 <text fill="#222222"  xml:space="preserve" font-size="4.39884" transform="translate(190.39, 98.8672)" >A</text>
@@ -783,6 +784,7 @@ text {font-family: Sans-Serif;}
 <path class="l5" d="M318.125 225.592L320.945 225.592L320.945 228.412L318.125 228.412L318.125 225.592z"/>
 <path class="l5" d="M268.074 226.297L269.484 226.297L269.484 227.707L268.074 227.707L268.074 226.297z"/>
 <path class="l5" d="M335.749 226.297L337.158 226.297L337.158 227.707L335.749 227.707L335.749 226.297z"/>
+<path class="l5" d="M268.074 333.448L269.484 333.448L269.484 334.858L268.074 334.858L268.074 333.448z"/>
 <path class="l1" d="M77.0349 334.153L88.314 334.153"/>
 <path class="l1" d="M77.0349 322.874L88.314 322.874"/>
 <path class="l1" d="M77.0349 311.595L88.314 311.595"/>

@@ -101,7 +101,7 @@ Example of a switched capacitor amplifier.
 
 
 RPLY\_BIAS\_SKY130NM is a PTAT current source bias. One of the 1 uA currents
-is fed into a feq resistors. 
+is fed into a few resistors. 
 
 
 The gain of the switched capacitor amplifier is set by the relationship
@@ -132,4 +132,25 @@ smaller than the input capacitors.
 
 
 
+
+## TB_CNR_OTA/TB_CNROTA_SCAMP_OP.svg
+
+
+
+
+![TB_CNR_OTA/TB_CNROTA_SCAMP_OP.svg](TB_CNR_OTA/TB_CNROTA_SCAMP_OP.svg)
+
+
+
+
+Demonstration of the transient operating point back annotation.
+
+First run simulation (requires `cicsim` see [Getting Started](https://analogicus.com/aicex/started/))
+
+```bash
+cd sim/TB_CNROTA_SCAMP 
+make typical OPT="Debug"
+```
+
+Then Ctrl and left click the "Load Waveforms"
 
