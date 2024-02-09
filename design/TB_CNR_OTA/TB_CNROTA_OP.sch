@@ -130,7 +130,7 @@ value=500k
 footprint=1206
 device=resistor
 m=1}
-C {devices/lab_wire.sym} -140 -240 0 0 {name=p4 sig_type=std_logic lab=VIN}
+C {devices/lab_wire.sym} -140 -240 0 0 {name=p4 sig_type=std_logic lab=VI}
 C {devices/lab_wire.sym} 400 -300 0 0 {name=p5 sig_type=std_logic lab=VOP}
 C {devices/lab_wire.sym} 310 -400 0 0 {name=p6 sig_type=std_logic lab=VON}
 C {devices/lab_wire.sym} 120 -400 0 0 {name=p7 sig_type=std_logic lab=VIP}
