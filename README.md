@@ -18,7 +18,9 @@ When I make switched-cap examples, like TB_CNROTA_SCAMP, I need a fully differen
  ![](documents/CNR_OTA_SKY130NM/CNR_OTA.svg)
  
  
- 
+# Download/Clone
+
+See [install.md](install.md)
 
 # What
 
